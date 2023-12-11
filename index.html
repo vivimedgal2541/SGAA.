@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY4DBtF+6dPOIcwl2U5x/c6J3U5C5hNQ8N2jD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f8f8; 
+        }
+
+        header {
+            background-color: #FF8C00; 
+            color: white;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        section {
+            padding: 20px;
+            width: 70%; 
+            box-sizing: border-box;
+            background-color: #F0E68C;
+            margin: 20px 0; 
+        }
+
+        footer {
+            background-color: #FF8C00;  
+            color: white;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+        }
+
+      
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto; 
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            margin-bottom: 16px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #FF8C00; 
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+       
+        #welcome {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #FF8C00; 
+            color: white;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .welcome-banner img {
+            max-width: 30%;
+            height: auto;
+            margin-bottom: 20px;
+            margin-right: -20px;
+        }
+
+        .welcome-message h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            background-color: #FF7C00; 
+        }
+        .animal-gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; 
+        }
+        .animal-item {
+            text-align: center;
+        }
+        .animal-item img {
+            max-width: 150px;
+            height: auto;
+            cursor: pointer;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            font-family:Serif;
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="header-icons">
+        <a href="#" title="Pesquisar"><i class="fas fa-search"></i></a>
+        <a href="#" title="Telefone"><i class="fas fa-phone"></i></a>
+        <a href="067 999000425" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" title="Doações"><i class="fas fa-donate"></i></a>
+    </div>
+    <div class="logo-container">
+        <img src="logoo.png" alt="Sua Logo" style="max-width: 150px; max-height: 400px; margin-right:10px;"> 
+        <h1> S.A.A - Sistema de Adoção de Animais</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#animais"><i class="fas fa-paw"></i> Animais para Adoção</a></li>
+            <li><a href="#como-adoptar"><i class="fas fa-search"></i> Como Adotar</a></li>
+            <li><a href="#doacoes"><i class="fas fa-donate"></i> Doações</a></li>
+            <li><a href="#contato"><i class="fas fa-phone"></i> Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section id="welcome">
+        <div class="welcome-banner">
+            <img src="dog.png" alt="Adote um amigo peludo">
+        </div>
+        <div class="welcome-message">
+            <h2>Encontre Seu Melhor Amigo Aqui!</h2>
+            <p>Em nossa comunidade de adoção de animais, temos amigos peludos esperando por um lar amoroso. Adotar não apenas muda a vida deles, mas também a sua. Descubra o amor verdadeiro com um amigo de quatro patas!</p>
+        </div>
+    </section>
+
+    <section id="animais">
+        <h2>Animais para Adoção</h2>
+        <div class="animal-gallery">
+            <div class="animal-item" onclick="mostrarDetalhes('Cachorro1')">
+                <img src="coca.png" alt="Cachorro 1">
+                <p>Coquinha</p>
+                <button onclick="mostrarFormularioAdocao('Cachorro1')"><i class="fas fa-paw"></i> Adotar</button>
+            </div>
+            <div class="animal-item" onclick="mostrarDetalhes('Gato1')">
+                <img src="mimi.png" alt="Gato 1">
+                <p>Mimi</p>
+                <button onclick="mostrarFormularioAdocao('Gato1')"><i class="fas fa-paw"></i> Adotar</button>
+            </div>
+
+             <div class="animal-item" onclick="mostrarDetalhes('Cachorro2')">
+                <img src="cac.png" alt="Cachorro2">
+                <p>Balu</p>
+                <button onclick="mostrarFormularioAdocao('Cachorro2')"><i class="fas fa-paw"></i> Adotar</button>
+            </div>
+            <div class="animal-item" onclick="mostrarDetalhes('Cachorro3')">
+                <img src="add.png" alt="Cachorro3">
+                <p>Luna</p>
+                <button onclick="mostrarFormularioAdocao('Cachorro3')"><i class="fas fa-paw"></i> Adotar</button>
+            </div>
+              <div class="animal-item" onclick="mostrarDetalhes('Gato2')">
+                <img src="gat.png" alt="Gato2">
+                <p>Mingau</p>
+                <button onclick="mostrarFormularioAdocao('Gato2')"><i class="fas fa-paw"></i> Adotar</button>
+            </div>
+
+
+
+            
+        </div>
+
+        
+        <div id="formulario-adocao" style="display: none;">
+            <h3>Formulário de Adoção</h3>
+            <form>
+                <label for="nome-adotante">Seu Nome:</label>
+                <input type="text" id="nome-adotante" name="nome-adotante" required>
+
+                <label for="email-adotante">Seu E-mail:</label>
+                <input type="email" id="email-adotante" name="email-adotante" required>
+
+                <label for="mensagem-adocao">Mensagem para a ONG:</label>
+                <textarea id="mensagem-adocao" name="mensagem-adocao" required></textarea>
+
+                <button type="button" onclick="enviarFormularioAdocao()"><i class="fas fa-paper-plane"></i> Enviar Pedido de Adoção</button>
+                <button type="button" onclick="cancelarFormularioAdocao()"><i class="fas fa-times"></i> Cancelar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="como-adoptar">
+        <h2>Como Adotar</h2>
+        <p>Adotar um animal é um processo simples. Siga os passos abaixo:</p>
+        <ol>
+            <li>Escolha um animal na seção "Animais para Adoção".</li>
+            <li>Preencha o formulário de adoção.</li>
+            <li>Entraremos em contato para agendar uma visita.</li>
+        </ol>
+    </section>
+
+<section id="doacoes">
+    <h2>Doações</h2>
+    <p>Sua doação ajuda a cuidar dos animais e manter nosso abrigo. Qualquer quantia é bem-vinda!</p>
+    <form>
+        <label for="valor-doacao">Valor da Doação:</label>
+        <input type="text" id="valor-doacao" name="valor-doacao" placeholder="Digite o valor em R$" required>
+
+        <label for="nome-doador">Seu Nome:</label>
+        <input type="text" id="nome-doador" name="nome-doador" required>
+
+        <label for="email-doador">Seu E-mail:</label>
+        <input type="email" id="email-doador" name="email-doador" required>
+
+        <label for="mensagem-doacao">Mensagem Adicional (opcional):</label>
+        <textarea id="mensagem-doacao" name="mensagem-doacao"></textarea>
+
+        <button type="submit"><i class="fas fa-donate"></i> Fazer uma Doação</button>
+    </form>
+</section>
+
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco se tiver alguma dúvida ou se precisar de mais informações.</p>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="button" onclick="enviarMensagem()"><i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+        </form>
+    </section>
+
+   <footer>
+        <p>&copy; 2023 Adoção de Animais</p>
+    </footer>
+
+    <script>
+        function mostrarDetalhes(animal) {
+            console.log('Detalhes do animal:', animal);
+        }
+
+        function mostrarFormularioAdocao(animal) {
+            document.getElementById('formulario-adocao').style.display = 'block';
+            console.log('Formulário para adotar o animal:', animal);
+        }
+
+        function enviarFormularioAdocao() {
+            console.log('Formulário de adoção enviado');
+        }
+
+        function cancelarFormularioAdocao() {
+            document.getElementById('formulario-adocao').style.display = 'none';
+            console.log('Formulário de adoção cancelado');
+        }
+
+        function enviarMensagem() {
+           
+            console.log('Mensagem enviada');
+        }
+    </script>
+</body>
+</html>
+
